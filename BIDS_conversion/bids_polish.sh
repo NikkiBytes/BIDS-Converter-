@@ -30,11 +30,6 @@ for f in ${folders[@]}; do
 
     cd ..
 
-
-
-
-
-
     echo "$subject  $f" >> subject_conversion.txt
 
     echo  "$participant" >> participants.txt
