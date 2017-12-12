@@ -2,6 +2,11 @@
 """
 # @author: Nichollette Acosta
 # @title: OsiriX Subject Scraper
+  @Description: This script is used to scrape OsiriX viewer and grab
+                our subject ids. We will give it a specifc ID to gather,
+                then we will iterate through our IDS and run our setup_subjects.py
+                on the given ID.
+
 """
 
 ######################################################################################################################################
@@ -37,12 +42,14 @@ session.visit(url_base)
 x = session.at_xpath('//*[@name="username"]')
 x = session.at_xpath('//*[@name="password"]')
 
-
 # Add your username here:
-x.set("nibl")
+username = 'nibl'
+x.set(username)
+
 
 # Add your password here:
-x.set("eatthisnotthat")
+password = 'eatthisnotthat'
+x.set(password)
 
 ##############################################################################################
 login = session.at_xpath('//*[@name="login"]')
