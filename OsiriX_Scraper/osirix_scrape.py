@@ -43,12 +43,12 @@ x = session.at_xpath('//*[@name="username"]')
 x = session.at_xpath('//*[@name="password"]')
 
 # Add your username here:
-username = 'nibl'
+username = 'username'
 x.set(username)
 
 
 # Add your password here:
-password = 'eatthisnotthat'
+password = 'password'
 x.set(password)
 
 ##############################################################################################
