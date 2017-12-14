@@ -7,6 +7,7 @@
 # @Description:  This script will grab the participants and make a participants.tsv
                   file for our BIDS folder, as well as polish our BIDS conversion
 """
+
 ######################################################################################################################################
 
 

@@ -23,6 +23,7 @@ for f in ${files[@]};do
 num=$(($num+1))
 value=$(printf "%02d" $num)
 export value
-heudiconv -b -d /lab_data/SugarMama2/{subject}/raw/{subject}/*/*.dcm -s $f -f /test/heuristic_converter00.py -c dcm2niix -b  -o /test/output/SugarMama2/sub-${value}
+heudiconv -b -d /lab_data/eric_data/dicoms/wave1/dicoms/007/*.dcm -s $f -f /test/heuristic_converter00.py -c dcm2niix -b  -o /test/output/SugarMama2/sub-${value}
 echo $value
 done
+heudiconv -b -d /lab_data/{subject}/dicoms/wave1/dicoms/007/*.dcm -s eric_data -f /test/NIBL/ericdata_converter.py -c dcm2niix -b  -o /test/output/eric_test/sub-07
