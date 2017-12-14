@@ -37,23 +37,27 @@ def infotodict(seqinfo):
     #milkA = create_key('func/sub-' + subject + '_pace_moco_milkshake_A')
     noGo = create_key('func/sub-' + subject + '_task-Go_NoGo')
     #noGo2 = create_key('func/sub-' + subject + '_pace_moco_Go_NoGo2')
+    imagine = create_key('func/sub-' + subject + '_task-imagine')
 
 
 
-    info = {t1: [], fmap_phase: [], fmap_magnitude: [], milk: [], noGo: [] }
+
+    info = {t1: [], fmap_phase: [], fmap_magnitude: [], milk: [], noGo: [], imagine: [] }
 
     for s in seqinfo:
         print(s)
         if (s.dim1 == 256) and ('t1' in s.protocol_name):
             info[t1].append(s.series_id)  ## append if multiple series meet criteria
-        if (s.dim4 == 475 and s.is_motion_corrected == False ) and ('milkshake' in s.protocol_name):
+        if (s.dim3 == 54) and ('field' in s.protocol_name):
+            info[fmap_magnitude].append(s.series_id)  ## append if multiple series meet criteria
+        if (s.dim3 == 27) and ('field' in s.protocol_name):
+            info[fmap_phase].append(s.series_id)  ## append if multiple series meet criteria
+        if (s.dim4 == 475 and s.is_motion_corrected == False) and ('imagine' in s.protocol_name):
+            info[imagine].append(s.series_id)  ## append if multiple series meet criteria
+        if (s.dim4 == 445 and s.is_motion_corrected == False ) and ('milkshake' in s.protocol_name):
             info[milk].append(s.series_id)  ## append if multiple series meet criteria
         if (s.dim4 == 195 and s.is_motion_corrected == False) and ('Go' in s.protocol_name):
             info[noGo].append(s.series_id)  ## append if multiple series meet criteria
-        if (s.dim3 == 27) and ('field' in s.protocol_name):
-            info[fmap_magnitude].append(s.series_id)  ## append if multiple series meet criteria
-        if (s.dim3 == 54) and ('field' in s.protocol_name):
-            info[fmap_phase].append(s.series_id)  ## append if multiple series meet criteria
 
 
 
