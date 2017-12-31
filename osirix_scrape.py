@@ -53,7 +53,7 @@ x.set(password)
 
 ##############################################################################################
 login = session.at_xpath('//*[@name="login"]')
-login.click()/
+login.click()
 
 session.visit(url_target)
 page = session.body()
